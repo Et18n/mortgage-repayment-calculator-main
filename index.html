@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | Mortgage repayment calculator</title>
+
+    <link rel="stylesheet" href="src/output.css" />
+  </head>
+  <body class="my-6 mx-5 lg:overflow-hidden lg:m-0 lg:bg-[--Slate-100]">
+    <div
+      id="wrapper
+    "
+      class="lg:grid lg:grid-cols-2 lg:w-4/5 lg:absolute lg:bg-white lg:top-1/2 lg:left-1/2 lg:-translate-x-1/2 lg:-translate-y-1/2 lg:rounded-3xl lg:overflow-hidden"
+    >
+      <div id="container-empty" class="mb-6 lg:h-full lg:px-8 lg:py-8">
+        <div class="sm:flex sm:flex-row sm:w-full sm:justify-between lg:mb-10">
+          <span class="title font-semibold text-[--Slate-900] text-2xl">
+            Mortgage Calculator
+          </span>
+          <div
+            class="border-dotted text-[--Slate-500] underline decoration-[1px] sm:my-auto"
+            id="clearall"
+          >
+            Clear All
+          </div>
+        </div>
+        <div class="mt-3">
+          <div class="flex flex-col">
+            <span class=""> Mortgage Amount</span>
+            <div class="relative mt-2">
+              <i
+                class="fa-solid fa-sterling-sign overflow-hidden rounded-l-md absolute bg-[--Slate-100] w-[1.9rem] h-[1.9rem] top-[1px] left-[1px] text-center content-center"
+              ></i>
+              <input
+                type="text"
+                id="Mortgage_Amt"
+                class="border-[1px] border-[--Slate-300] overflow-hidden w-full h-8 rounded-md pl-10 text-[--Slate-900] font-bold"
+              />
+            </div>
+          </div>
+          <div class="sm:flex sm:flex-row sm:justify-between sm:gap-4 lg:mt-3">
+            <div class="flex flex-col mt-3 sm:w-full">
+              Mortgage Term
+              <div class="relative mt-2">
+                <input
+                  type="text"
+                  name=""
+                  id="Mortgage_Term"
+                  class="border-[1px] border-[--Slate-300] text-[--Slate-900] font-semibold w-full h-8 rounded-md pl-3 active:border-none"
+                />
+                <span
+                  class="absolute right-[1px] rounded-r-lg bg-[--Slate-100] top-[1px] h-[1.9rem] text-sm font-[700] text-center content-center w-[55px] years"
+                  >years</span
+                >
+              </div>
+            </div>
+
+            <div class="mt-3 flex flex-col sm:w-full">
+              Interest Rate
+              <div class="relative mt-2">
+                <input
+                  type="text"
+                  name=""
+                  id="Interest_Rate"
+                  class="border-[1px] border-[--Slate-300] font-semibold text-[--Slate-900] w-full h-8 rounded-md pl-3 active:border-none"
+                />
+                <i
+                  class="fa-solid fa-percent absolute text-center content-center right-[1px] rounded-r-lg top-[1px] bg-[--Slate-100] h-[1.9rem] w-[1.9rem]"
+                ></i>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-4 flex flex-col lg:mt-8">
+            <span class="font-bold"> Mortgage Type</span>
+            <div
+              id="repay_check"
+              class="checkbox-class flex flex-row border-[1px] border-[--Slate-300] w-full h-10 rounded-md items-center px-4 mt-2"
+            >
+              <input
+                type="checkbox"
+                id="Repayment"
+                value="Repayment"
+                class="checkbox"
+                name="1"
+              />
+              <span class="text-[--Slate-900] ml-4 font-semibold"
+                >Repayment</span
+              >
+            </div>
+            <div
+              id="Interest_check"
+              class="flex flex-row border-[1px] border-[--Slate-300] w-full h-10 rounded-md items-center px-4 mt-2"
+            >
+              <input
+                type="checkbox"
+                class="checkbox"
+                name="1"
+                id="Interest"
+                value="Interest"
+              />
+              <span class="text-[--Slate-900] font-semibold ml-4">
+                Interest Only</span
+              >
+            </div>
+          </div>
+          <button
+            id="calc"
+            class="cursor-pointer bg-[--Lime] w-full rounded-3xl py-2 text-[--Slate-900] font-semibold mt-4 sm:w-1/2"
+          >
+            <i class="fa-sharp fa-solid fa-calculator mr-2"></i>Calculate
+            Repayments
+          </button>
+        </div>
+      </div>
+
+      <!-- Empty results start -->
+      <div
+        id="lower_empty"
+        class="bg-[--Slate-900] text-center grid justify-center place-items-center absolute left-0 w-full mb-10 px-5 lg:start-1 lg:static lg:h-full"
+      >
+        <img
+          src="assets/images/illustration-empty.svg"
+          alt=""
+          class="w-[10rem] mt-7 mb-5 lg:w-64"
+        />
+        <span class="text-white font-semibold lg:-mt-10">
+          Results shown here <br />
+        </span>
+        <p class="mb-7">
+          Complete the form and click “calculate repayments” to see what your
+          monthly repayments would be.
+        </p>
+      </div>
+
+      <!-- Empty results end -->
+      <div
+        id="lower_full"
+        class="absolute bg-[--Slate-900] left-0 px-5 hidden lg:static lg:start-1 lg:h-full"
+      >
+        <!-- Completed results start -->
+        <div class="text-white mt-7 font-bold mb-4 text-xl">Your results</div>
+        <p class="text-[16px]">
+          Your results are shown below based on the information you provided. To
+          adjust the results, edit the form and click “calculate repayments”
+          again.
+        </p>
+
+        <div
+          class="bg-[--unko] border-t-[3px] rounded-md border-t-[--Lime] px-3 py-4 mb-7 mt-4 lg:h-2/4"
+        >
+          <!-- <div
+          class="bg-[--Lime] w-full h-[5px] rounded-full  top-[1px] z-0"
+        ></div> -->
+          <div>
+            <span class="text-[--Slate-300]">
+              Your monthly repayments <br
+            /></span>
+            <span
+              id="monthly_repayments"
+              class="text-[--Lime] text-2xl sm:text-4xl lg:text-6xl"
+              ><i class="fa-solid fa-sterling-sign mt-3"></i> 0</span
+            >
+          </div>
+          <div class="border-t-[1px] border-t-[--Slate-300] my-2 lg:my-8"></div>
+          <div class="">
+            <span class="text-[--Slate-300]">
+              Total you'll repay over the term <br
+            /></span>
+            <span
+              id="Total_amt"
+              class="text-white text-xl sm:text-2xl lg:text-4xl"
+              ><i class="fa-solid fa-sterling-sign text-white"></i> 0</span
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="index.js"></script>
+  </body>
+</html>

@@ -1,0 +1,61 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap");
+@layer base {
+  :root {
+    /* Primary   */
+    --Lime: hsl(61, 70%, 52%);
+    --Red: hsl(4, 69%, 50%);
+    /* Neutral */
+    --White: hsl(0, 0%, 100%);
+    --Slate-100: hsl(202, 86%, 94%);
+    --Slate-300: hsl(203, 41%, 72%);
+    --Slate-500: hsl(200, 26%, 54%);
+    --Slate-700: hsl(200, 24%, 40%);
+    --Slate-900: hsl(202, 55%, 16%);
+    --unko: hsl(202, 56%, 12%);
+    --font: ("inter", sans-serif);
+  }
+  body {
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    color: var(--Slate-500);
+  }
+}
+.title {
+  font-family: "Inter", sans-serif !important;
+}
+.years {
+  font-family: "inter", sans-serif;
+}
+
+.checkbox {
+  width: 1em;
+  height: 1em;
+  background-color: white;
+  border-radius: 50%;
+  vertical-align: middle;
+  border: 1px solid hsl(202, 55%, 16%);
+  appearance: none;
+  -webkit-appearance: none;
+  outline: none;
+  cursor: pointer;
+}
+.checkbox:checked {
+  background-color: var(--Lime);
+  border: var(--Lime);
+}
+.checkbox input:checked span::before {
+  content: "●";
+}
+@media only screen and (min-width: 900px) {
+  #lower_empty,
+  #lower_full {
+    border-bottom-left-radius: 80px;
+  }
+}
+.hidden {
+  display: none;
+}
