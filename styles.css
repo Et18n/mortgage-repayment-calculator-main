@@ -59,3 +59,16 @@
 .hidden {
   display: none;
 }
+#Mortgage_Amt:focus,
+#Mortgage_Term:focus,
+#Interest_Rate:focus {
+  outline: none;
+}
+.error {
+  border-color: var(--Red) !important;
+}
+.error::after {
+  content: "This field is required";
+  font-size: 12px;
+  color: var(--Red);
+}

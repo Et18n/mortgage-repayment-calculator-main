@@ -734,10 +734,6 @@ body {
   justify-content: center;
 }
 
-.self-center {
-  align-self: center;
-}
-
 .overflow-hidden {
   overflow: hidden;
 }
@@ -947,6 +943,22 @@ body {
   display: none;
 }
 
+#Mortgage_Amt:focus,
+#Mortgage_Term:focus,
+#Interest_Rate:focus {
+  outline: none;
+}
+
+.error {
+  border-color: var(--Red) !important;
+}
+
+.error::after {
+  content: "This field is required";
+  font-size: 12px;
+  color: var(--Red);
+}
+
 .active\:border-none:active {
   border-style: none;
 }
@@ -1017,23 +1029,13 @@ body {
     margin: 0px;
   }
 
-  .lg\:my-0 {
-    margin-top: 0px;
-    margin-bottom: 0px;
-  }
-
-  .lg\:my-5 {
-    margin-top: 1.25rem;
-    margin-bottom: 1.25rem;
-  }
-
   .lg\:my-8 {
     margin-top: 2rem;
     margin-bottom: 2rem;
   }
 
-  .lg\:-mt-5 {
-    margin-top: -1.25rem;
+  .lg\:-mt-10 {
+    margin-top: -2.5rem;
   }
 
   .lg\:mb-10 {
@@ -1046,22 +1048,6 @@ body {
 
   .lg\:mt-8 {
     margin-top: 2rem;
-  }
-
-  .lg\:mt-4 {
-    margin-top: 1rem;
-  }
-
-  .lg\:-mt-1 {
-    margin-top: -0.25rem;
-  }
-
-  .lg\:-mt-10 {
-    margin-top: -2.5rem;
-  }
-
-  .lg\:flex {
-    display: flex;
   }
 
   .lg\:grid {
@@ -1094,57 +1080,8 @@ body {
     transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
   }
 
-  .lg\:translate-x-0 {
-    --tw-translate-x: 0px;
-    transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-  }
-
-  .lg\:translate-x-5 {
-    --tw-translate-x: 1.25rem;
-    transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-  }
-
-  .lg\:translate-x-56 {
-    --tw-translate-x: 14rem;
-    transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-  }
-
-  .lg\:translate-x-52 {
-    --tw-translate-x: 13rem;
-    transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-  }
-
-  .lg\:translate-x-\[\] {
-    --tw-translate-x: ;
-    transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-  }
-
-  .lg\:translate-x-\[50\%\] {
-    --tw-translate-x: 50%;
-    transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-  }
-
-  .lg\:translate-x-\[55\%\] {
-    --tw-translate-x: 55%;
-    transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-  }
-
-  .lg\:translate-x-\[\%\] {
-    --tw-translate-x: %;
-    transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-  }
-
-  .lg\:translate-x-\[60\%\] {
-    --tw-translate-x: 60%;
-    transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-  }
-
   .lg\:grid-cols-2 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .lg\:flex-col {
-    flex-direction: column;
   }
 
   .lg\:overflow-hidden {
@@ -1174,18 +1111,13 @@ body {
     padding-bottom: 2rem;
   }
 
-  .lg\:text-9xl {
-    font-size: 8rem;
-    line-height: 1;
+  .lg\:text-4xl {
+    font-size: 2.25rem;
+    line-height: 2.5rem;
   }
 
   .lg\:text-6xl {
     font-size: 3.75rem;
     line-height: 1;
-  }
-
-  .lg\:text-4xl {
-    font-size: 2.25rem;
-    line-height: 2.5rem;
   }
 }
